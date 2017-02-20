@@ -2,13 +2,16 @@
 
 @section('content')
     <div class="container">
-        <div class="col-lg-4 col-lg-offset-4">
+        <div class="col-lg-6 col-lg-offset-3">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     {{ $user->name }}'s Profile
                 </div>
-                <div class="panel-body">
+                <div class="panel-body text-center">
                     <img src="{{ Storage::url($user->avatar) }}" style=" width: 200px;" alt="{{ $user->name }}'s avatar">
+                </div>
+                <div class="text-center">
+                    <a href="{{ route('profile.edit', ['slug' => $user->slug]) }}" class="btn btn-default">Edit Your Profile</a>
                 </div>
             </div>
         </div>
