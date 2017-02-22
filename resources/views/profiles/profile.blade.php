@@ -8,7 +8,7 @@
                     {{ $user->name }}'s Profile
                 </div>
                 <div class="panel-body text-center">
-                    <img src="{{ Storage::url($user->avatar) }}" style=" width: 200px;" alt="{{ $user->name }}'s avatar">
+                    <img class="profile-image" src="{{ Storage::url($user->avatar) }}" alt="{{ $user->name }}'s avatar">
                 </div>
                 <div class="text-center">
                     <a href="{{ route('profile.edit', ['slug' => $user->slug]) }}" class="btn btn-default">Edit Your Profile</a>

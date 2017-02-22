@@ -6,8 +6,13 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Edit Your Profile</div>
                 <div class="panel-body">
-                    <form method="post" action="{{ route('profile.update', ['slug' => $profile->user->slug]) }}">
+                    <form method="post" action="{{ route('profile.update', ['slug' => $profile->user->slug]) }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
+
+                        <div class="form-group">
+                            <label for="avatar">Profile Image</label>
+                            <input type="file" name="avatar" accept="image/*" class="form-control">
+                        </div>
 
                         <div class="form-group">
                             <label for="location" class="control-label">Location</label>
