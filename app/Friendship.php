@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Friendship extends Model
 {
-	protected $fillable = ['requester', 'requested', 'statue'];
+	protected $fillable = ['requester', 'requested', 'status'];
 }
