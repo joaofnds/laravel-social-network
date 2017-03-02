@@ -38,4 +38,27 @@ trait Friendable
 
 		return response()->json($friendship, 501);
 	}
+
+	public function friends()
+	{
+		$friends = array();
+
+		$f1 = Friendship::where('status', 1)
+						->where('requester', $this->id)
+						->get();
+
+		foreach($f1 as $friendship) {
+			array_push($friends, \App\User::find($friendship->requested));
+		}
+
+		$f2 = Friendship::where('status', 1)
+						->where('requested', $this->id)
+						->get();
+
+		foreach($f2 as $friendship) {
+			array_push($friends, \App\User::find($friendship->requester));
+		}
+
+		return $friends;
+	}
 }

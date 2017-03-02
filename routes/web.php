@@ -27,6 +27,10 @@ Route::get('/accept_friend', function() {
     return \App\User::find(2)->accept_friend(1);
 });
 
+Route::get('/friends', function() {
+    return \App\User::find(1)->friends();
+});
+
 Route::group(['middleware' => 'auth'], function() {
 
     Route::group(['prefix' => '/profile/{slug}'], function() {
